@@ -1,0 +1,35 @@
+{#{% include "header.html" %}#}
+<html>
+<head>
+    {% load material_form %}
+    {% load static %}
+    <meta charset="utf-8">
+    {% include 'material/includes/material_css.html' %}
+    <script src="{% static 'material/js/jquery-2.2.0.js' %}"></script>
+    {% include 'material/includes/material_js.html' %}
+</head>
+<body>
+<div class="container">
+
+<table class="table">
+<thead>
+  <tr>
+    <th>ARRID</th>
+    <th>CIV</th>
+    <th>COMPLET</th>
+  </tr>
+</thead>
+<tbody>
+{% for d in data %}
+          <tr class="success">
+            <td>{{ d.ARRID }}</td>
+            <td>{{ d.CIV }}</td>
+            <td>{{ d.COMPLET }} </td>
+          </tr>
+{% endfor %}
+
+</tbody>
+</table>
+
+</div>
+{#{% include "footer.html" %}#}
