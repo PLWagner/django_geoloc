@@ -17,5 +17,5 @@ from django.conf.urls import url, include
 # from django.contrib import admin
 
 urlpatterns = [
-    url(r'^geo/', include('geo_localisation.urls')),
+    url(r'', include('geo_localisation.urls')),
 ]

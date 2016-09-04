@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'geo_localisation',
-    'django_google_maps',
     'material',
 ]
 
@@ -115,8 +114,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-GOOGLE_MAPS_API_KEY = 'AIzaSyAs4EmJ4zkbn50u2zhYHAWVuvRFIbw7bY0'
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,7 +1,9 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from . import views
+from geo_localisation.views import accueil, batiments, details
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', accueil, name='accueil'),
+    url(r'^batiments', batiments, name='batiments'),
+    url(r'^batiments/?$/details', details, name='details'),
 ]

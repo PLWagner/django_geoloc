@@ -1,35 +1,50 @@
-{#{% include "header.html" %}#}
+{% include "header.html" %}
 <html>
 <head>
-    {% load material_form %}
-    {% load static %}
     <meta charset="utf-8">
-    {% include 'material/includes/material_css.html' %}
-    <script src="{% static 'material/js/jquery-2.2.0.js' %}"></script>
-    {% include 'material/includes/material_js.html' %}
+    <style>
+        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: #CCCCCC;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
+<form method="post">
+    {% csrf_token %}
+{#    {{ form.as_p }}#}
 
-<table class="table">
-<thead>
-  <tr>
-    <th>ARRID</th>
-    <th>CIV</th>
-    <th>COMPLET</th>
-  </tr>
-</thead>
-<tbody>
-{% for d in data %}
-          <tr class="success">
-            <td>{{ d.ARRID }}</td>
-            <td>{{ d.CIV }}</td>
-            <td>{{ d.COMPLET }} </td>
-          </tr>
-{% endfor %}
-
-</tbody>
-</table>
-
+    <table class="table-hover" id="myTable">
+        <thead>
+            <tr>
+                <th>Sélection</th>
+                <th>ARRID</th>
+                <th>CIV</th>
+                <th>COMPLET</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in data %}
+            <tr class="clickable-row">
+{#                <td><label class="form-check-label"><input class="form-check-input" type="checkbox" value=""></label></td>#}
+                <td>{{ form.as_p }}</td>
+                <td>{{ d.ARRID }}</td>
+                <td>{{ d.CIV }}</td>
+                <td>{{ d.COMPLET }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <input type="submit" value="Submit" />
+</form>
 </div>
+<script>
+    jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+</script>
+</body>
+
 {#{% include "footer.html" %}#}
