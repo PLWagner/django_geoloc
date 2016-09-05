@@ -23,30 +23,14 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        {% if perms.formes.voir_le_cercle %}
-        <li {% if request.path == '/formes/cercle' %} class="active" {% endif %}><a href="/formes/cercle">Cercle</a></li>
-        {% endif %}
-        {% if perms.formes.voir_le_carre %}
-        <li {% if request.path == '/formes/carre' %} class="active" {% endif %}><a href="/formes/carre">Carre</a></li>
-        {% endif %}
-        {% if perms.formes.administrer %}
-        <li  {% if request.path == '/config/securite' %} class="active" {% endif %}><a href="/config/securite">Admininstration</a></li>
-        <li {% if request.path == '/config/policy' %} class="active" {% endif %}><a href="/config/policy">Politique des mots de passe</a></li>
-        <li {% if request.path == '/log/sessions' %} class="active" {% endif %}><a href="/log/sessions">Journal des sessions</a></li>
-        <li {% if request.path == '/log/passwordchange' %} class="active" {% endif %}><a href="/log/passwordchange">Journal des mots de passe</a></li>
-        <li {% if request.path == '/createuser' %} class="active" {% endif %}><a href="/createuser">Créer un utilisateur</a></li>
-        <li {% if request.path == '/manageuser' %} class="active" {% endif %}><a href="/manageuser">Éditer le compte des utilisateurs</a></li>
-        <li {% if request.path == '/manageyubikey' %} class="active" {% endif %}><a href="/manageyubikey">Éditer les Yubi-Key des utilisateurs</a></li>
-        <li {% if request.path == '/userpasswordreset' %} class="active" {% endif %}><a href="/userpasswordreset">Redéfinir le mot de passe des utilisateur</a></li>
-        {% endif %}
-        {% if perms.formes.voir_le_cercle or perms.formes.voir_le_carre %}
-            <li {% if request.path == '/passwordchange' %} class="active" {% endif %}><a href="/passwordchange">Changer mon mot de passe</a></li>
-            <li {% if request.path == '/logout' %} class="active" {% endif %}><a href="/logout">Logout</a></li>
-        {% else %}
+        {% if batiments %}
             <li  {% if request.path == '/batiments' %} class="active" {% endif %}><a href="/batiments">Bâtiments</a></li>
+        {% elif details  %}
+            <li  class="active"><a href="/batiments">Bâtiments</a></li>
+            <li  class="active"><a href="/batiments/{{ data.ID }}">Détails du {{ data.COMPLET }}</a></li>
         {% endif %}
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
 </body>

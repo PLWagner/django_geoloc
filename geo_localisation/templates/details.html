@@ -1,10 +1,154 @@
+{% include "header.html" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <h1>Localisation</h1>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover" id="myTable">
+                <tbody>
+                <tr>
+                    <td class="col-lg-4"><b>Adresse</b></td>
+                    <td class="col-lg-8">{{ data.COMPLET }}, Montréal, Québec</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <a type="button" class="btn btn-success" href="carte">Localisez le bâtiment sur Google Maps</a>
+        </div>
+    </div>
+    <div class="row">
+        <h1>Propriétaire</h1>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover" id="myTable">
+                <tbody>
+                <tr>
+                    <td><b>Compte foncier</b></td>
+                    <td>{{ data.COMPTE_FONCIER }}</td>
+                </tr>
+                <tr>
+                    <td class="col-lg-4"><b>Prénom</b></td>
+                    <td class="col-lg-8">{{ data.PRENOM_PROPRIETAIRE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Nom</b></td>
+                    <td>{{ data.NOM_PROPRIETAIRE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Adresse</b></td>
+                    <td>{{ data.COMPLET_ADR_PROP }}</td>
+                </tr>
+                <tr>
+                    <td><b>Ville et province</b></td>
+                    <td>{{ data.VILLE_ADR_PROP }}</td>
+                </tr>
+                <tr>
+                    <td><b>Code postal</b></td>
+                    <td>{{ data.CP_ADR_PROP }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <div class="row">
+        <h1>Détails du bâtiment</h1>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover" id="myTable">
+                <tbody>
+                <tr>
+                    <td class="col-lg-4"><b>Identifiant de la municipalité</b></td>
+                    <td class="col-lg-8">{{ data.MUNID }}</td>
+                </tr>
+                <tr>
+                    <td><b>Identifiant de l'arrondissement</b></td>
+                    <td>{{ data.ARRID }}</td>
+                </tr>
+                <tr>
+                    <td><b>Description du secteur</b></td>
+                    <td>{{ data.DESCRIPTION }}</td>
+                </tr>
+                <tr>
+                    <td><b>Bâtiment à moins de 500 mètres d'un métro</b></td>
+                    <td>{{ data.TAMPON_500_METRO }}</td>
+                </tr>
+                <tr>
+                    <td><b>Valeur du terrain (2013)</b></td>
+                    <td>{{ data.VALEUR_BATIMENT }} $</td>
+                </tr>
+                <tr>
+                    <td><b>Valeur du bâtiment (2013)</b></td>
+                    <td>{{ data.VALEUR_BATIMENT }} $</td>
+                </tr>
+                <tr>
+                    <td><b>Intérêt patrimonial</b></td>
+                    <td>{{ data.INTERET_IMMEUBLE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Zone patrimonial</b></td>
+                    <td>{{ data.ZONE_PATRIMOINE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Type de zone tampon autour de l'immeuble patrimonial</b></td>
+                    <td>{{ data.TYPE_ZONE_PATRIMOINE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Quartier d'intérêt ou quartier ciblé par l'arrondissement dans un plan d'urbanisme</b></td>
+                    <td>{{ data.INTERET_QUARTIER }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <h1>Règlementation d'urbanisme 01-282 Ville-Marie</h1>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover" id="myTable">
+                <tbody>
+                <tr>
+                    <td class="col-lg-4"><b>Usages</b></td>
+                    <td class="col-lg-8">{{ data.REGL_USAGE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Hauteur</b></td>
+                    <td>{{ data.REGL_HAUTEUR }}</td>
+                </tr>
+                <tr>
+                    <td><b>Étages</b></td>
+                    <td>{{ data.REGL_ETAGES }}</td>
+                </tr>
+                <tr>
+                    <td><b>Densité</b></td>
+                    <td>{{ data.REGL_DENSITE }}</td>
+                </tr>
+                <tr>
+                    <td><b>Implantation</b></td>
+                    <td>{{ data.REGL_IMPLANTATION }}</td>
+                </tr>
+                <tr>
+                    <td><b>Unité de paysage</b></td>
+                    <td>{{ data.REGL_UNITE_PAYSAGE }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

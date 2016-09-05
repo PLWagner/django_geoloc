@@ -2,46 +2,41 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <style>
-        .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-        background-color: #CCCCCC;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
-<form method="post">
-    {% csrf_token %}
-{#    {{ form.as_p }}#}
-
-    <table class="table-hover" id="myTable">
+<div class="row">
+    <h3>Cliquez sur une rangée du tableau pour avoir les détails du bâtiment.</h3>
+    <br>
+</div>
+<div class="row">
+    <table class="table table-hover" id="myTable">
         <thead>
             <tr>
-                <th>Sélection</th>
-                <th>ARRID</th>
-                <th>CIV</th>
-                <th>COMPLET</th>
+                <th>Adresse</th>
+                <th>Valeur du bâtiment</th>
+                <th>Valeur du terrain</th>
+                <th>Description</th>
             </tr>
         </thead>
         <tbody>
         {% for d in data %}
-            <tr class="clickable-row">
-{#                <td><label class="form-check-label"><input class="form-check-input" type="checkbox" value=""></label></td>#}
-                <td>{{ form.as_p }}</td>
-                <td>{{ d.ARRID }}</td>
-                <td>{{ d.CIV }}</td>
-                <td>{{ d.COMPLET }} </td>
+            <tr class="clickable-row" data-url="{{ d.ID }}">
+                <td>{{ d.COMPLET }}</td>
+                <td>{{ d.VALEUR_BATIMENT }} $</td>
+                <td>{{ d.VALEUR_TERRAIN }} $</td>
+                <td>{{ d.DESCRIPTION }} </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-    <input type="submit" value="Submit" />
-</form>
+</div>
 </div>
 <script>
+
     jQuery(document).ready(function($) {
     $(".clickable-row").click(function() {
-        window.document.location = $(this).data("href");
+        window.document.location = $(this).data('url');
     });
 });
 </script>
