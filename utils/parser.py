@@ -79,3 +79,7 @@ class Parser:
                                                        )
                     metadata.save()
                     count += 1
+
+if __name__ == '__main__':
+    p = Parser()
+    p.insert_data()
