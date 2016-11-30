@@ -1,0 +1,76 @@
+{% include "header.html" %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+<style>
+body, html {
+    height: 100%;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('http://www.planwallpaper.com/static/images/cool-wallpaper-1.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+
+<body>
+
+<div class="parallax"></div>
+
+<div>
+    <img src="../static/cool_cat.jpg">
+</div>
+
+</body>
+</html>
+
+
+{#<body>#}
+{#<div class="container">#}
+{#<div class="row">#}
+{#    <h3>Cliquez sur une rangée du tableau pour avoir les détails du bâtiment.</h3>#}
+{#    <br>#}
+{#</div>#}
+{#<div class="row">#}
+{#    <table class="table table-hover" id="myTable">#}
+{#        <thead>#}
+{#            <tr>#}
+{#                <th>Adresse</th>#}
+{#                <th>Valeur du bâtiment</th>#}
+{#                <th>Valeur du terrain</th>#}
+{#                <th>Description</th>#}
+{#            </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for d in data %}#}
+{#            <tr class="clickable-row" data-url="{{ d.ID }}">#}
+{#                <td>{{ d.COMPLET }}</td>#}
+{#                <td>{{ d.VALEUR_BATIMENT }} $</td>#}
+{#                <td>{{ d.VALEUR_TERRAIN }} $</td>#}
+{#                <td>{{ d.DESCRIPTION }} </td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+{#</div>#}
+{#</div>#}
+{#<script>#}
+{##}
+{#    jQuery(document).ready(function($) {#}
+{#    $(".clickable-row").click(function() {#}
+{#        window.document.location = $(this).data('url');#}
+{#    });#}
+{#});#}
+{#</script>#}
+{#</body>#}

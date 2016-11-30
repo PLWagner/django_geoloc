@@ -12,6 +12,12 @@ def batiments(request):
         return render(request, 'batiments.html', {'data': data})
 
 
+def bangarang(request):
+    if request.method == 'GET':
+        # data = MetaData.objects.all()
+        return render(request, 'bangarang.html')
+
+
 def details(request, num):
     if request.method == 'GET':
         batiments = True
